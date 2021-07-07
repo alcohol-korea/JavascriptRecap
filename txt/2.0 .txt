@@ -1,8 +1,0 @@
-브라우저는 html을 실행시킴 따라서 html을 열어야하고 js 나 css를 열면 실행이 안됨
-브라우저는 css와 js라인들을 보고 실행하는 거임
-
-콘솔이 안나왔던 이유는 js만 놓고 html을 실행 시키지 않았기 때문이다
-html파일을 직접 찾아서 열어야 함
-
-그리고 js의 결과는 에러나 console.log는 브라우저의 console에 나옴
-우리는 브라우저와 대화하는거임 terminal에서 보는건 node.js인 백엔드임 지금은 front-end임
