@@ -9,10 +9,10 @@ var d;
 //null => object라 나옴
 var e = null;
 
-console.log(
+/*console.log(
     typeof a,
     typeof b,
     typeof c,
     typeof d, 
     typeof e,
-    );
+    );*/
