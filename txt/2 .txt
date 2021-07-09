@@ -1,12 +1,12 @@
 2.0
-브라우저는 html을 실행시킴 따라서 html을 열어야하고 js 나 css를 열면 실행이 안됨
-브라우저는 css와 js라인들을 보고 실행하는 거임
-
-콘솔이 안나왔던 이유는 js만 놓고 html을 실행 시키지 않았기 때문이다
-html파일을 직접 찾아서 열어야 함
-
-그리고 js의 결과는 에러나 console.log는 브라우저의 console에 나옴
-우리는 브라우저와 대화하는거임 terminal에서 보는건 node.js인 백엔드임 지금은 front-end임
+    브라우저는 html을 실행시킴 따라서 html을 열어야하고 js 나 css를 열면 실행이 안됨
+    브라우저는 css와 js라인들을 보고 실행하는 거임
+    
+    콘솔이 안나왔던 이유는 js만 놓고 html을 실행 시키지 않았기 때문이다
+    html파일을 직접 찾아서 열어야 함
+    
+    그리고 js의 결과는 에러나 console.log는 브라우저의 console에 나옴
+    우리는 브라우저와 대화하는거임 terminal에서 보는건 node.js인 백엔드임 지금은 front-end임
 
 2.2 variable
     const a = 10; 
@@ -21,67 +21,67 @@ html파일을 직접 찾아서 열어야 함
     console.log("hello"+veryLongVariable);
 
 2.3 const let
-const
-     = constant cannot change
-    const myName = "han"
-    console.log(myName);//han
-    myName = "kim"
-    console.log(myName);//새로운 값을 대입 할 수 없다고 나옴
-    Identifier 'myName' has already been declared
-let
-    upadating variable 할떄 새로운 변수를 생성할떄만 let을 쓰고 updating할떄는 let을 안쓰고 변수만 쓴다
-    js는 위에서 아래로 실행
-    let myName = "han"
-    console.log(myName);//han
-    myName = "kim"
-    console.log(myName);//kim
+    const
+         = constant cannot change
+        const myName = "han"
+        console.log(myName);//han
+        myName = "kim"
+        console.log(myName);//새로운 값을 대입 할 수 없다고 나옴
+        Identifier 'myName' has already been declared
+    let
+        upadating variable 할떄 새로운 변수를 생성할떄만 let을 쓰고 updating할떄는 let을 안쓰고 변수만 쓴다
+        js는 위에서 아래로 실행
+        let myName = "han"
+        console.log(myName);//han
+        myName = "kim"
+        console.log(myName);//kim
 
-use const by default and use let to upadte
+    use const by default and use let to upadte
 
-var
-    을 쓸수는 있지만 
-    만약 우리가 실수를 하더라도 
-    var로는 찾을수 없고 
-    const  let으로는 알수 있다.  
-    값을 바꾸는 실수 말인거다
+    var
+        을 쓸수는 있지만 
+        만약 우리가 실수를 하더라도 
+        var로는 찾을수 없고 
+        const  let으로는 알수 있다.  
+        값을 바꾸는 실수 말인거다
 *****기본적으로 const 를 쓰고 필요할떄만 let을쓰되 ,var은 쓰지 말것******
 
 2.4 boolean
-null
-    const loggenIn = null;
-    console.log(loggenIn);//null 값
-    //null 은 there is nothing here
-    //아무것도 없는 채로 채워짐 비워져있음 empty
-undefnied
-    let a;//값이 없음 
-    console.log(a);//undefnied 타입 변수는 인지하지만 변수에대한 값이 없다
+    null
+        const loggenIn = null;
+        console.log(loggenIn);//null 값
+        //null 은 there is nothing here
+        //아무것도 없는 채로 채워짐 비워져있음 empty
+    undefnied
+        let a;//값이 없음 
+        console.log(a);//undefnied 타입 변수는 인지하지만 변수에대한 값이 없다
 
 2.6 object
-variable
-    const playerName = "nico";//  객체Property 순으로 쓰여짐
-    const playerHandsome = true;
-아래꺼가 훨씬 더 정돈되어있음
-    player.name;   객체.property
-    player.handsome;
-array 로 정리해보자
-     player = ["nico",true]; -> 이것은 어떤 property가 어떤 객체의 property 인지 모름
-object
-    const player = {
-        name : "nico",
-        handsome : true, 
-    }; 
-    ***우리는 객체에서 =을:로 쓰고 ;를 ,로 쓴다***
-    property표기법
-        console.log(player.name);//nico
-        console.log(player["handsome"]);// 객체["property"]로 작성해야 된댜.  true
-    갱신하기
-        player = false;// error 왜냐면 const이기에 갱신 불가능
-        player.handsome = false;
-        console.log(player.handsome);//false
-    property 추가
-        player.age = 30;
-        console.log(player.age);//30
-    upadating with adding
-        나이를 여기서 더 추가하고 싶다면 바꾸는것도 있지만 
-        player.age = player.age + 15;//도 있다.
-        console.log(player.age);//45
+    variable
+        const playerName = "nico";//  객체Property 순으로 쓰여짐
+        const playerHandsome = true;
+    아래꺼가 훨씬 더 정돈되어있음
+        player.name;   객체.property
+        player.handsome;
+    array 로 정리해보자
+         player = ["nico",true]; -> 이것은 어떤 property가 어떤 객체의 property 인지 모름
+    object
+        const player = {
+            name : "nico",
+            handsome : true, 
+        }; 
+        ***우리는 객체에서 =을:로 쓰고 ;를 ,로 쓴다***
+        property표기법
+            console.log(player.name);//nico
+            console.log(player["handsome"]);// 객체["property"]로 작성해야 된댜.  true
+        갱신하기
+            player = false;// error 왜냐면 const이기에 갱신 불가능
+            player.handsome = false;
+            console.log(player.handsome);//false
+        property 추가
+            player.age = 30;
+            console.log(player.age);//30
+        upadating with adding
+            나이를 여기서 더 추가하고 싶다면 바꾸는것도 있지만 
+            player.age = player.age + 15;//도 있다.
+            console.log(player.age);//45
