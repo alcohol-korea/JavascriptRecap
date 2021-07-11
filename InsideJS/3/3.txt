@@ -4,8 +4,8 @@
     null은 조건문을 이용시 ===연산자 이용
 3.2 참조데이터 타입 - 객체
     객체 생성   
-        1. 객체 함수 이용 - new 객체()
-        2. 객체 리터럴 방식 - 객체 = {객체 프로퍼티 값: value값}\
+        1. 객체 함수 - new 객체()
+        2. 객체 생성 - 리터럴 방식 - 객체 = {객체 프로퍼티 값: value값}
     객체 표기
         1.객체 프로퍼티 추가시 기존거면 갱신되고, 
           아니면 새로운 프로퍼티 추가하여 값을 할당 
@@ -27,3 +27,45 @@
     객체 프로퍼티 삭제 
          1.delete연산자 
          2.객체 자체는 삭제 할 수 없음
+3.3 참조 타입의 특성
+    1. 객체의 값 updating 가능
+        ex)
+        const 객체1 ={name:"10"};
+        let 객체2 = 객체1;
+        객체2.name = "hi";
+        객체1 => {name : "hi"};로 바뀜 
+    2. 객체 비교
+        == 동등 연산자 이용
+        객체 자체를 비교함, 객체의 프로퍼티의 값이 아님
+            객체값 = {프로퍼티:값}
+            프로퍼티 값 = 값 위{} 안에 있는 값임
+                const a = 10;
+                const b = 10;
+
+                objA = {value:10};
+                objB = {value:10};
+                let objC = objB;
+
+                console.log(a==b);//true    
+                console.log(objA==objB);//false
+                console.log(objB==objC);//true
+    3. 참조에 의한 함수 호출
+        객체는 인자로 쓰인 객체의 값이 updating되면,
+        객체의 실제 값도 바뀜
+        하지만, 기본 값들은 함수 안에서 선언된다면 함수 안에서만 적용됨
+            ex)
+            const a = 10;
+            const objA = {value:10};
+            const b = 11;
+
+            const changeArg = (num,obj) => {
+                num = 200;
+                obj.value = 200;
+                console.log(num);//200
+                console.log(obj.value); 10에서 200으로 갱신됨
+                console.log(b);//11
+            };
+            changeArg(a,objA);//200,200,11
+
+            console.log(a);//10
+            console.log(objA.value);//200 실제값도 200으로 갱신됨
