@@ -1,34 +1,11 @@
-//boolean
-const loggenIn = null;
-console.log(loggenIn);//null 값
-//null 은 there is nothing here
-//아무것도 없는 채로 채워짐 비워져있음 empty
-let a;//값이 없음 
-console.log(a);//undefnied 타입 변수는 인지하지만 변수에대한 값이 없다
 
-//variable
-const playerName = "nico";//player property
-const playerHandsome = true;
-//아래꺼가 훨씬 더 정돈되어있음
-//player.name;
-//player.handsome;
-//array
-// player = ["nico",true];//이것은 어떤 property가 어떤 값인지 모름
-//object
-const player = {
-    name : "nico",
-    handsome : true, 
-}; //우리는 객체에서 =을:로 쓰고 ;를 ,로 쓴다
-console.log(player.name);//nico
-console.log(player["handsome"]);//["property"]로 작성해야 된댜.  true
-//갱신하기
-//player = false;// error 왜냐면 const이기에 갱신 불가능
-player.handsome = false;
-//property 추가
-player.age = 30;
-console.log(player.handsome);//false
-console.log(player.age);//30
-//upadating with adding
-//나이를 여기서 더 추가하고 싶다면 바꾸는것도 있지만 
-player.age = player.age + 15;//도 있다.
-console.log(player.age);//45
+const week = ["mon", "tue" ,"wed", "thur", "fri", "sat"] ; 
+console.log(week);
+//[]사용 ,로 나눔 모든 데이터를 저장가능 list로 데이터를 나열 할 수 있음 
+//그리고 손 쉽게 찾을 수도 있음
+//배열의 인덱스는 0부터 시작함 
+//원하는 인덱스를 출력할때는 week[0] 처럼 array[해당 인덱스]를 하면 됨
+// 배열에 추가 가능 push()
+week.push("sun");
+console.log(week);
+//하나의 변수안에 데이터의 list를 가지는 것이 목적임
