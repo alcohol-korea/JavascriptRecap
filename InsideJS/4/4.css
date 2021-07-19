@@ -1,0 +1,47 @@
+body {
+  background-color: teal;
+}
+h1 {
+  color: tomato;
+}
+#a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 50%;
+}
+.b {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  background-color: teal;
+}
+.c {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 50px;
+  background-color: white;
+}
+.small {
+  width: 50px;
+  height: 50px;
+  background-color: teal;
+}
+.d {
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+  height: 150px;
+  background-color: teal;
+}
+button {
+  color: black;
+  background-color: violet;
+  border: none;
+  border-radius: 30%;
+}
