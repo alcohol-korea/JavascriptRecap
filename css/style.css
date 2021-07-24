@@ -1,3 +1,14 @@
 body {
   background-color: wheat;
 }
+h1 {
+  font-size: 50px;
+  color: teal;
+}
+input {
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  padding: 5px 0px;
+  text-align: center;
+}
