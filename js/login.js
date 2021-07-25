@@ -8,7 +8,7 @@ function loginSubmitOn(info){
 }
 
 function handleClicked(event){
-    alert("hello!")
+    event.preventDefault();
     console.log(event);
 }
 
