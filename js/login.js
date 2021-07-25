@@ -1,17 +1,18 @@
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+const loginForm = document.querySelector("#login-form");
+const link = document.querySelector("a");
 
-function loginButtonClickOn(e){
-    const username = loginInput.value;
-    if(username === ""){
-        alert("you have to write your name");
-        return;
-    }else if(username.length>8){
-        alert("name is too long");
-        return;
-    }
-    return console.log("hello",username);
+function loginSubmitOn(info){
+    info.preventDefault();//addEventListener의 함수이며 이벤트 동작을 막는다
+    console.log(info);
 }
 
-loginButton.addEventListener("click",loginButtonClickOn);
+function handleClicked(event){
+    alert("hello!")
+    console.log(event);
+}
+
+loginForm.addEventListener("submit",loginSubmitOn);//submit이벤트는 form만 쓸수 있는 이벤트이다 
+link.addEventListener("click",handleClicked);
+
 
