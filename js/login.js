@@ -3,7 +3,7 @@ const loginForm = document.querySelector("#login-form");
 const link = document.querySelector("a");
 
 function loginSubmitOn(info){
-    info.preventDefault();//addEventListener의 함수이며 이벤트 동작을 막는다
+    info.preventDefault();//addEventListener의 첫번쨰 인자에 있는 함수이며 이벤트 동작을 막는다
     console.log(info);
 }
 
