@@ -1,31 +1,33 @@
-const loginInput = document.querySelector("#login-form input");
-const loginForm = document.querySelector("#login-form");
-const greeting = document.querySelector("#greeting")
+const loginForm = document.querySelector("#js-login");
+const loginInput = document.querySelector("#js-login input");
+const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CN = "hidden";
-const USERNAME_LS = "username";
+const HIDDEN = "hidden";
+const USERNAME_KEY = "username";
 
 function loginSubmitOn(e){
-    e.preventDefault();//addEventListener의 첫번쨰 인자에 있는 함수이며 이벤트 동작을 막는다
-    const username = loginInput.value; //변수에 저장
-    localStorage.setItem(USERNAME_LS,username);
-    loginForm.classList.add(HIDDEN_CN);//form없애기
+    e.preventDefault();
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    loginForm.classList.add(HIDDEN);
     paintGreeting(username);
 }
 
-function paintGreeting(name){
-    greeting.classList.remove(HIDDEN_CN);//h1의 hidden class제거
-    greeting.innerText = `Hello ${name}`;//h1에 이름 넣기
+function paintGreeting(value){
+    greeting.classList.remove(HIDDEN);
+    greeting.innerText = `Hello ${value}`;
 }
 
-const savedUsername = localStorage.getItem(USERNAME_LS);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if(savedUsername === null){
-    loginForm.classList.remove(HIDDEN_CN);
-    loginForm.addEventListener("submit",loginSubmitOn);//submit이벤트는 form만 쓸수 있는 이벤트이다 
+    loginForm.classList.remove(HIDDEN);
+    loginForm.addEventListener("submit",loginSubmitOn);
 }else{
     paintGreeting(savedUsername);
 }
+
+
 
 
 
