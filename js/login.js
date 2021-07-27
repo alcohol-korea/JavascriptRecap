@@ -10,11 +10,23 @@ function loginSubmitOn(e){
     const username = loginInput.value; //변수에 저장
     localStorage.setItem(USERNAME_LS,username);
     loginForm.classList.add(HIDDEN_CN);//form없애기
-    greeting.innerText = `Hello ${username}`;//h1에 이름 넣기
-    greeting.classList.remove(HIDDEN_CN);//h1의 hidden class제거
+    paintGreeting(username);
 }
 
-loginForm.addEventListener("submit",loginSubmitOn);//submit이벤트는 form만 쓸수 있는 이벤트이다 
+function paintGreeting(savedUsername){
+    greeting.classList.remove(HIDDEN_CN);//h1의 hidden class제거
+    greeting.innerText = `Hello ${savedUsername}`;//h1에 이름 넣기
+}
+
+const savedUsername = localStorage.getItem(USERNAME_LS);
+
+if(savedUsername === null){
+    loginForm.classList.remove(HIDDEN_CN);
+    loginForm.addEventListener("submit",loginSubmitOn);//submit이벤트는 form만 쓸수 있는 이벤트이다 
+}else{
+    paintGreeting(savedUsername);
+}
+
 
 
 
