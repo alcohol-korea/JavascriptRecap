@@ -13,9 +13,9 @@ function loginSubmitOn(e){
     paintGreeting(username);
 }
 
-function paintGreeting(savedUsername){
+function paintGreeting(name){
     greeting.classList.remove(HIDDEN_CN);//h1의 hidden class제거
-    greeting.innerText = `Hello ${savedUsername}`;//h1에 이름 넣기
+    greeting.innerText = `Hello ${name}`;//h1에 이름 넣기
 }
 
 const savedUsername = localStorage.getItem(USERNAME_LS);
