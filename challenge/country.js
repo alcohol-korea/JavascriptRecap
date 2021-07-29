@@ -10,8 +10,8 @@ function selectedCountry(){
 const savedCountry = localStorage.getItem(COUNTRY_LS);
 
 if(savedCountry){
-    const option = select.querySelector(`option[value =  ${savedCountry}]`);
-    option.selected = true;
+    const selectedOption = select.querySelector(`option[value =  ${savedCountry}]`);
+    selectedOption.selected = true;
 } 
 
 select.addEventListener("change",selectedCountry);
