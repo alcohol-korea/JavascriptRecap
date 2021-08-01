@@ -1,31 +1,32 @@
 const loginForm = document.querySelector("#js-login");
-const loginInput = document.querySelector("#js-login input");
+const loginInput =  document.querySelector("#js-login input");
 const greeting = document.querySelector("#greeting");
 
-const HIDDEN = "hidden";
-const USERNAME_KEY = "username";
+const USERNAME_LS = "username";
 
 function loginSubmitOn(e){
     e.preventDefault();
     const username = loginInput.value;
-    localStorage.setItem(USERNAME_KEY, username);
-    loginForm.classList.add(HIDDEN);
+    loginForm.classList.add("hidden");
     paintGreeting(username);
+    localStorage.setItem(USERNAME_LS,username);
 }
 
-function paintGreeting(value){
-    greeting.classList.remove(HIDDEN);
-    greeting.innerText = `Hello ${value}`;
+function paintGreeting(userName){
+    greeting.classList.remove("hidden");
+    greeting.innerText = `Hello ${userName}`;
 }
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
+const savedUsername = localStorage.getItem(USERNAME_LS);
 
 if(savedUsername === null){
-    loginForm.classList.remove(HIDDEN);
-    loginForm.addEventListener("submit",loginSubmitOn);
-}else{
-    paintGreeting(savedUsername);
-}
+    greeting.classList.add("hidden")
+    loginForm.classList.remove("hidden");
+}else{paintGreeting(savedUsername);}//else를 무조건 써야함 함수안에서는 안써도됨
+
+
+loginForm.addEventListener("submit",loginSubmitOn);//loginForm이어야 submit도 포함되서 submit이됨
+
 
 
 

@@ -36,7 +36,7 @@ const qoutes = [
 const qoute = document.querySelector("#qoute span:first-child");
 const author = document.querySelector("#qoute span:last-child");
 
-const todayQoute =qoutes[Math.floor(Math.random()*qoutes.length)];
+const todayQoute = qoutes[Math.floor(Math.random(qoutes)*qoutes.length)];
 
 qoute.innerText = todayQoute.qoute;
 author.innerText = todayQoute.author;

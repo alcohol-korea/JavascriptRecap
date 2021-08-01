@@ -1,17 +1,15 @@
 const images = [
-        "나도데려가.jpg",
-        "아수라백작.jpg",
-        "쫀더기.jpg",
-        "코비,베리.jpg",
-        "carrot.jpg",
-        "lemon.jpg",
+    "나도데려가",
+    "아수라백작",
+    "쫀더기",
+    "코비,베리"
 ];
 
-const selectedImg = images[Math.floor(Math.random()*images.length)];
+const randomImg = images[Math.floor(Math.random(images)*images.length)];
 
-const bgImg = document.createElement("img");
+const backgroundImg = document.createElement("img");
 
-bgImg.src = `img/${selectedImg}`;
-bgImg.classList.add("bgimage");
+backgroundImg.src = `img/${randomImg}.jpg`;
+backgroundImg.classList.add("bgimage");
+document.body.appendChild(backgroundImg);
 
-document.body.appendChild(bgImg);
