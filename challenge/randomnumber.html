@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="randomnumber.css">
+    <title>RandomNumberGame</title>
+</head>
+<body>
+    <h1>Random Number Game</h1>
+    <h2>Genrate a number between 0 and 10</h2>
+    <form class="range">
+        <input type="range" min="10" max="200" step="10">
+    </form>
+    <form class="randomnumber">
+        <label for="number">
+            Guess the number:
+            <input type="number" id="number" min="0" max="200" >
+        </label>
+        <input type="submit" value="play">
+    </form>
+    <h4 class="compare hidden"></h4>
+    <h4 class="result hidden"></h4>
+    <script src="randomnumber.js"></script>
+</body>
+</html>
