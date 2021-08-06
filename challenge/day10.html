@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>randomnumber정답</title>
+</head>
+<body>
+    <h1>Random Number Game</h1>
+    <!--Range part-->
+    <div>
+        <h3 class="js-title">Genrate a number 0 and <span>10</span></h3>
+        <datalist id="number">
+            <option value="50"></option>
+            <option value="100"></option>
+            <option value="150"></option>
+            <option value="200"></option>
+        </datalist>
+        <input 
+            list="number"
+            type="range"
+            id="js-range"
+            min="0"
+            max="200"
+            value="0"
+            step="10"
+        >
+    </div>
+    <!--Guess part-->
+    <form id="js-guess">
+        <label>Guess the number:</label>
+        <input type="number" max="200" min="0">
+        <button>Play!</button>
+    </form>
+    <!--Result part-->
+    <div id="js-result">
+        <span></span>
+    </div>
+    <script src="day10정답.js"></script>
+</body>
+</html>

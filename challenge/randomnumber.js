@@ -2,29 +2,51 @@ const gameTitle = document.querySelector("h2");
 const range = document.querySelector(".range input");
 const numberForm = document.querySelector(".randomnumber");
 const number = document.querySelector(".randomnumber label input");
+const resultTitle = document.querySelector(".result");
+const compareTitle = document.querySelector(".compare");
+
+function handleRandomNumber(e){
+    e.preventDefault();    
+    compareTitle.classList.remove("hidden");
+    resultTitle.classList.remove("hidden");
+    startGame();
+}
 
 function rangeMaxNumber(e){
     e.preventDefault();
     const rangeInput = range.value;
     gameTitle.innerText = `Genrate a number between 0 and ${rangeInput}`;
-    const machineNumber =  Math.floor(Math.random(rangeInput)*rangeInput);
-    console.dir(machineNumber);
-    numberForm.addEventListener("submit",(e)=>{
-        e.preventDefault();
-        const numberInput = number.value;
-        const compareTitle = document.querySelector(".compare");
-        compareTitle.classList.remove("hidden");
-        compareTitle.innerText = `You chose: ${numberInput}, the machine chose: ${machineNumber}.`;
-        const resultTitle = document.querySelector(".result");
-        resultTitle.classList.add("hidden");
-        if(numberInput===machineNumber){
-            resultTitle.innerText = "You win!";
-            resultTitle.classList.add("teal");
-        }else{
-            resultTitle.innerText = "You lost!";
-            resultTitle.classList.add("tomato");
-        }
-    });
+
 }
 
+function machineChoosing(){
+    const rangeInput = range.value;
+    const machineNumber =  Math.ceil(Math.random()*rangeInput);
+    return machineNumber;
+}
+
+function startGame(){
+    const userNumber = parseInt(number.value,10);
+    if(userNumber === ""){
+        return;
+    }
+    const  machineNumber = machineChoosing();
+    console.log( userNumber, machineNumber );
+    if(userNumber === machineNumber)
+    {
+        compareTitle.innerText = `You chose: ${userNumber}, the machine chose: ${machineNumber}.`;
+        resultTitle.innerText = "You win!";
+        resultTitle.classList.add("teal");
+        resultTitle.classList.remove("tomato");
+    }
+    else
+    {
+        compareTitle.innerText = `You chose: ${userNumber}, the machine chose: ${machineNumber}.`;
+        resultTitle.innerText = "You lost!";
+        resultTitle.classList.add("tomato");
+        resultTitle.classList.remove("teal");
+    }
+}
+numberForm.addEventListener("submit",handleRandomNumber);
 range.addEventListener("change",rangeMaxNumber);
+
