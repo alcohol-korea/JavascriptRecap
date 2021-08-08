@@ -9,10 +9,26 @@
 </head>
 <body>
     <h1>Random Number Game</h1>
+    <!--range part-->
     <form class="range">
-    <h2>Genrate a number between 0 and 10</h2>
-    <input type="range" min="10" max="200" step="10">
+    <h2>Genrate a number between 0 and <span>10</span></h2>
+    <datalist id="range">
+        <option value="50"></option>
+        <option value="100"></option>
+        <option value="150"></option>
+        <option value="200"></option>
+    </datalist>
+    <input 
+    list="range" 
+    id="js-range"
+    type="range" 
+    min="10" 
+    max="200" 
+    step="10"
+    value="10"
+    >
     </form>
+    <!--Guess part-->
     <form class="randomnumber">
         <label for="number">
             Guess the number:

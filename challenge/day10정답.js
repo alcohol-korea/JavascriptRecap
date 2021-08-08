@@ -1,29 +1,31 @@
-const range = document.getElementById("js-range");
+//rangepart
 const title = document.querySelector(".js-title");
-const guessForm = document.getElementById("js-guess");
+const range = document.getElementById("js-range");
+const guess = document.getElementById("js-guess");
 const result = document.getElementById("js-result");
 
 function handleRangeChange(e){
     const selectedRange = title.querySelector("span");
     selectedRange.innerHTML = range.value;
 }
+//guess part
 
 function handleGuessSubmit(e){
     e.preventDefault();
-    const guessInput = guessForm.querySelector("input");
-    if(guessInput === ""){
+    const guessInput = guess.querySelector("input");//틀림
+    if(guessInput===""){
         return;
     }
     const max = range.value;
-    const random = Math.ceil(Math.random()*max);//최대치 이므로 올림
-    const userGuess = parseInt(guessInput.value,10);
+    const machineNum = Math.ceil(Math.random()*max);
+    const userNumber = parseInt(guessInput.value,10);//틀림
     const resultSpan = result.querySelector("span");
     resultSpan.innerHTML = `
-    You chose: ${userGuess},
-    the machine chose: ${random}.<br/>
-    <strong>${userGuess === random ? "You won!":"You lost!"}</strong>
+    You chose: ${userNumber},
+    the machine chose: ${machineNum}. <br/>
+    <strong>${userNumber===machineNum?"You won":"You lost"}</strong>
     `;
 }
 
-guessForm.addEventListener("submit",handleGuessSubmit);
+guess.addEventListener("submit",handleGuessSubmit);
 range.addEventListener("input",handleRangeChange);
